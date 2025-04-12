@@ -28,3 +28,18 @@ function displayNumbers() {
     numbersListElement.appendChild(li);
   }
 }
+
+// INIZIO IL COUNTDOWN DI 30 SECONDI
+let timeLeft = 30;
+function startCountdown() {
+  const interval = setInterval(() => {
+    countdownElement.textContent = `${timeLeft}`;
+    timeLeft--;
+
+    if (timeLeft < 0) {
+      clearInterval(interval);
+      countdownElement.textContent = "";
+      hideNumbersAndShowForm();
+    }
+  }, 1000);
+}
