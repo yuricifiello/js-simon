@@ -43,3 +43,10 @@ function startCountdown() {
     }
   }, 1000);
 }
+
+// NASCONDO I NUMERI E VISUALIZZO IL FORM CON LA FUNZIONE "hideNumbersAndShowForm"
+function hideNumbersAndShowForm() {
+  numbersListElement.innerHTML = "";
+  instructionsElement.textContent = "Scrivi i numeri che ricordi:";
+  formElement.classList.remove("d-none");
+}
