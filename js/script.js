@@ -50,3 +50,32 @@ function hideNumbersAndShowForm() {
   instructionsElement.textContent = "Scrivi i numeri che ricordi:";
   formElement.classList.remove("d-none");
 }
+
+// UTENTE VISUALIZZA I NUMERI GENERATI
+formElement.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const userNumbers = [];
+
+  for (let i = 0; i < inputs.length; i++) {
+    const value = parseInt(inputs[i].value);
+    userNumbers.push(value);
+  }
+
+  const matchedNumbers = [];
+
+  for (let i = 0; i < userNumbers.length; i++) {
+    if (
+      randomNumbers.includes(userNumbers[i]) &&
+      !matchedNumbers.includes(userNumbers[i])
+    ) {
+      matchedNumbers.push(userNumbers[i]);
+    }
+  }
+
+  messageElement.textContent = `Hai indovinato ${matchedNumbers.length} numeri `;
+});
+
+generateRandomNumbers();
+displayNumbers();
+startCountdown();
