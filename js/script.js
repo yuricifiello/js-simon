@@ -17,3 +17,14 @@ function generateRandomNumbers() {
     }
   }
 }
+
+// VISUALIZZO I NUMERI CHE SONO STATI CREATI CON GLI ELEMENTI DEL DOM (LI)
+function displayNumbers() {
+  numbersListElement.innerHTML = "";
+  for (let i = 0; i < randomNumbers.length; i++) {
+    const li = document.createElement("li");
+    li.textContent = randomNumbers[i];
+    li.classList.add("fs-3", "fw-bold");
+    numbersListElement.appendChild(li);
+  }
+}
